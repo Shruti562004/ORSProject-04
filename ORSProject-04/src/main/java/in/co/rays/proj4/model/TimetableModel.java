@@ -4,7 +4,7 @@
  * prevent duplicate timetable entries. This model interacts with the st_timetable 
  * table in the database.
  * 
- * @author Chaitanya Bhatt
+ * @author Shruti Rathore
  * @version 1.0
  */
 

@@ -133,7 +133,7 @@
 	<b>|</b>
 	<a href="<%=ORSView.BUDGET_CTL%>"><b>Add Budget</b></a>
 	<b>|</b>
-	<a href="<%=ORSView.BUDGET_LIST_CTL%>"><b> Budget List </b></a>
+	<a href="<%=ORSView.BUDGET_LIST_CTL%>"><b> Budget List </b></a>|
 	<a href="<%=ORSView.JAVA_DOC%>" target="blank"><b>Java Doc</b></a>
 	<b>|</b>
 	<a href="<%=ORSView.LOGIN_CTL + "?operation=Logout"%>"><b>Logout</b></a>

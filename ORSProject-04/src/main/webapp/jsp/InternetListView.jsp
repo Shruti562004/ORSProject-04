@@ -57,8 +57,7 @@
 						<input type="text" name="name" placeholder="Enter  name" value="<%=ServletUtility.getParameter("name", request)%>">&emsp;
                          <label><b> Price :</b></label>
 						<input type="text" name="price" placeholder="Enter  " value="<%=ServletUtility.getParameter("price", request)%>">&emsp;
-						 <label><b> Limit :</b></label>
-						<input type="text" name="limit" placeholder="Enter  " value="<%=ServletUtility.getParameter("limit", request)%>">&emsp;
+						
                         <input type="submit" name="operation" value="<%=InternetListCtl.OP_SEARCH%>">&nbsp;
                         <input type="submit" name="operation" value="<%=InternetListCtl.OP_RESET%>">
                     </td>
