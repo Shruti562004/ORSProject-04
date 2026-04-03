@@ -7,7 +7,7 @@ import java.sql.Timestamp;
  * It provides common attributes such as id, createdBy, modifiedBy,
  * createdDatetime, and modifiedDatetime.
  *
- * @author Neeraj Mewada
+ * @author Shruti Rathore
  * @version 1.0
  */
 public abstract class BaseBean implements DropdownListBean {

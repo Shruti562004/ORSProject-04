@@ -6,7 +6,7 @@ package in.co.rays.proj4.bean;
  * must provide a key (usually the ID) and a value (usually the name
  * or label to be displayed).
  *
- * author Neeraj Mewada
+ * author Shruti Rathore
  * @version 1.0
  */
 public interface DropdownListBean {

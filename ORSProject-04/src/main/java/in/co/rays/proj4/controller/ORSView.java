@@ -12,7 +12,7 @@ package in.co.rays.proj4.controller;
  * patterns used by servlets.
  * </p>
  *
- * @author Neeraj Mewada
+ * @author Shruti Rathore
  * @version 1.0
  */
 public interface ORSView {
@@ -106,13 +106,89 @@ public interface ORSView {
 
 	public String JAVA_DOC = "/ORSProject-04/doc/index.html";
 
-	public String PATIENT_VIEW = PAGE_FOLDER + "/PatientView.jsp";
-	public String PATIENT_CTL = APP_CONTEXT + "/ctl/PatientCtl";
 
-	public String PATIENT_LIST_VIEW = PAGE_FOLDER + "/PatientListView.jsp";
-	public String PATIENT_LIST_CTL = APP_CONTEXT + "/ctl/PatientListCtl";
+
+	public String GYMWORKOUT_VIEW = PAGE_FOLDER + "/GymworkoutView.jsp";
+	public String GYMWORKOUT_CTL = APP_CONTEXT + "/ctl/GymworkoutCtl";
+
+	public String GYMWORKOUT_LIST_VIEW = PAGE_FOLDER + "/GymworkoutListView.jsp";
+	public String GYMWORKOUT_LIST_CTL = APP_CONTEXT + "/ctl/GymworkoutListCtl";
+
+	public String BROADCAST_VIEW = PAGE_FOLDER + "/BroadcastView.jsp";
+	public String BROADCAST_CTL = APP_CONTEXT + "/ctl/BroadcastCtl";
+
+	public String BROADCAST_LIST_VIEW = PAGE_FOLDER + "/BroadcastListView.jsp";
+	public String BROADCAST_LIST_CTL = APP_CONTEXT + "/ctl/BroadcastListCtl";
+
+	public String ART_VIEW = PAGE_FOLDER + "/ArtView.jsp";
+	public String ART_CTL = APP_CONTEXT + "/ctl/ArtCtl";
+
+	public String ART_LIST_VIEW = PAGE_FOLDER + "/ArtListView.jsp";
+	public String ART_LIST_CTL = APP_CONTEXT + "/ctl/ArtListCtl";
+
+	public String NOTIFICATION_VIEW = PAGE_FOLDER + "/NotificationView.jsp";
+	public String NOTIFICATION_CTL = APP_CONTEXT + "/ctl/NotificationCtl";
+
+	public String NOTIFICATION__LIST_VIEW = PAGE_FOLDER + "/NotificationListView.jsp";
+	public String NOTIFICATION__LIST_CTL = APP_CONTEXT + "/ctl/NotificationListCtl";
+
+
+
+
+
+	public String PAYMENT_VIEW = PAGE_FOLDER + "/PaymentView.jsp";
+	public String PAYMENT_CTL = APP_CONTEXT + "/ctl/PaymentCtl";
+
+	public String PAYMENT_LIST_VIEW = PAGE_FOLDER + "/PaymentListView.jsp";
+	public String PAYMENT_LIST_CTL = APP_CONTEXT + "/ctl/PaymentListCtl";
+
+	public String ANNOUNCE_VIEW = PAGE_FOLDER + "/AnnounceView.jsp";
+	public String ANNOUNCE_CTL = APP_CONTEXT + "/ctl/AnnounceCtl";
+
+	public String ANNOUNCE_LIST_VIEW = PAGE_FOLDER + "/AnnounceListView.jsp";
+	public String ANNOUNCE_LIST_CTL = APP_CONTEXT + "/ctl/AnnounceListCtl";
 
 	
 
+	public String EMI_VIEW = PAGE_FOLDER + "/EmiView.jsp";
+	public String EMI_CTL = APP_CONTEXT + "/ctl/EmiCtl";
 
+	public String EMI_LIST_VIEW = PAGE_FOLDER + "/EmiListView.jsp";
+	public String EMI_LIST_CTL = APP_CONTEXT + "/ctl/EmiListCtl";
+
+	public String TRACKING_VIEW = PAGE_FOLDER + "/TrackingView.jsp";
+	public String TRACKING_CTL = APP_CONTEXT + "/ctl/TrackingCtl";
+
+	public String TRACKING_LIST_VIEW = PAGE_FOLDER + "/TrackingListView.jsp";
+	public String TRACKING_LIST_CTL = APP_CONTEXT + "/ctl/TrackingListCtl";
+	
+
+	public String INTERNET_VIEW = PAGE_FOLDER + "/InternetView.jsp";
+	public String  INTERNET_CTL = APP_CONTEXT + "/ctl/InternetCtl";
+
+	public String  INTERNET_LIST_VIEW = PAGE_FOLDER + "/InternetListView.jsp";
+	public String  INTERNET_LIST_CTL = APP_CONTEXT + "/ctl/InternetListCtl";
+
+	
+
+	public String LAB_VIEW = PAGE_FOLDER + "/LabView.jsp";
+	public String  LAB_CTL = APP_CONTEXT + "/ctl/LabCtl";
+
+	public String  LAB_LIST_VIEW = PAGE_FOLDER + "/LabListView.jsp";
+	public String  LAB_LIST_CTL = APP_CONTEXT + "/ctl/LabListCtl";
+	
+
+
+	public String PRESCRIPTION_VIEW = PAGE_FOLDER + "/PrescriptionView.jsp";
+	public String  PRESCRIPTION_CTL = APP_CONTEXT + "/ctl/PrescriptionCtl";
+
+	public String  PRESCRIPTION_LIST_VIEW = PAGE_FOLDER + "/PrescriptionListView.jsp";
+	public String  PRESCRIPTION_LIST_CTL = APP_CONTEXT + "/ctl/PrescriptionListCtl";
+	
+
+	public String BUDGET_VIEW = PAGE_FOLDER + "/BudgetView.jsp";
+	public String  BUDGET_CTL = APP_CONTEXT + "/ctl/BudgetCtl";
+
+	public String  BUDGET_LIST_VIEW = PAGE_FOLDER + "/BudgetListView.jsp";
+	public String  BUDGET_LIST_CTL = APP_CONTEXT + "/ctl/BudgetListCtl";
 }

@@ -31,7 +31,7 @@ import in.co.rays.proj4.util.JDBCDataSource;
  * rest of the project). Care should be taken if inputs can contain special
  * characters — ideally use parameterized queries for filters.
  *
- * @author Neeraj Mewada
+ * @author Shruti Rathore
  * @version 1.0
  */
 public class MarksheetModel {

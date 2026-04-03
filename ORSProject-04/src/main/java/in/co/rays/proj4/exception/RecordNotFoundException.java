@@ -12,7 +12,7 @@ package in.co.rays.proj4.exception;
  * This exception is used to indicate genuine "no data found" conditions.
  */
 /**
- * @author Neeraj Mewada
+ * @author Shruti Rathore
  *
  */
 public class RecordNotFoundException extends Exception {

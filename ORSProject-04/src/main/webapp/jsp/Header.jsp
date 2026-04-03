@@ -20,6 +20,10 @@
 <script src="/ORSProject-04/js/datepicker.js"></script>
 </head>
 <body>
+<!-- Logo -->
+	<img src="<%=request.getContextPath()%>/img/customLogo.jpg"
+		align="right" width="100" height="40" border="0">
+
 	<%
 		UserBean user = (UserBean) session.getAttribute("user");
 	%>
@@ -80,13 +84,61 @@
 	<b>|</b>
 	<a href="<%=ORSView.FACULTY_LIST_CTL%>"><b>Faculty List</b></a>
 	<b>|</b>
+	
+	
+	<!-- USE CASE -->
+	<a href="<%=ORSView.GYMWORKOUT_CTL%>"><b>Add Gymworkout</b></a> |
+	<a href="<%=ORSView.GYMWORKOUT_LIST_CTL%>"><b>Gymworkout List</b></a> |
+	
+		<a href="<%=ORSView.BROADCAST_CTL%>"><b>Add Broadcast</b></a> |
+	<a href="<%=ORSView.BROADCAST_LIST_CTL%>"><b>Broadcast List</b></a> |
+	
+		
+
+				<a href="<%=ORSView.ART_CTL%>"><b>Add Art</b></a> |
+	<a href="<%=ORSView.ART_LIST_CTL%>"><b>Art List</b></a> |
+	
+	
+				<a href="<%=ORSView.NOTIFICATION_CTL%>"><b>Add Notification</b></a> |
+	<a href="<%=ORSView.NOTIFICATION__LIST_CTL%>"><b>Notification List</b></a> |
+	
+		
+		<a href="<%=ORSView.PAYMENT_CTL%>"><b>Add Payment</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.PAYMENT_LIST_CTL%>"><b> Payment List </b></a>
+	<b>|</b>
+<a href="<%=ORSView.INTERNET_CTL%>"><b>Add Internet</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.INTERNET_LIST_CTL%>"><b> Internet List </b></a>
+	<b>|</b>
+<a href="<%=ORSView.LAB_CTL%>"><b>Add Lab</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.LAB_LIST_CTL%>"><b> Lab List </b></a>
+	<b>|</b>
+		
+	<a href="<%=ORSView.PRESCRIPTION_CTL%>"><b>Add Prescription</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.PRESCRIPTION_LIST_CTL%>"><b> Prescription List </b></a>
+	<b>|</b>
+		
+	
+	
+		<a href="<%=ORSView.EMI_CTL%>"><b>Add Emi</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.EMI_LIST_CTL%>"><b> Emi List </b></a>
+	<b>|</b>
+	<a href="<%=ORSView.TRACKING_CTL%>"><b>Add Tracking</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.TRACKING_LIST_CTL%>"><b> Tracking List </b></a>
+	<b>|</b>
+	<a href="<%=ORSView.BUDGET_CTL%>"><b>Add Budget</b></a>
+	<b>|</b>
+	<a href="<%=ORSView.BUDGET_LIST_CTL%>"><b> Budget List </b></a>
 	<a href="<%=ORSView.JAVA_DOC%>" target="blank"><b>Java Doc</b></a>
 	<b>|</b>
 	<a href="<%=ORSView.LOGIN_CTL + "?operation=Logout"%>"><b>Logout</b></a>
 	<b>|</b>
-	<a href="<%=ORSView.PATIENT_CTL%>"><b>Patient Apointment</b></a>
-	<b>|</b>
-	<a href="<%=ORSView.PATIENT_LIST_CTL%>"><b>Apointment List</b></a>
+	
 	<%
 		} else if (user.getRoleId() == RoleBean.STUDENT) {
 	%>
@@ -119,5 +171,6 @@
 	%>
 
 	<hr>
+<%@ include file="Footer.jsp"%>
 </body>
 </html>

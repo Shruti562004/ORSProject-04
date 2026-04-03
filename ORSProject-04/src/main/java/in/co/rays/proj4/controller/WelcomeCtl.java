@@ -18,7 +18,7 @@ import in.co.rays.proj4.util.ServletUtility;
  * It extends {@link BaseCtl} and currently supports only HTTP GET requests.
  * </p>
  * 
- * @author Neeraj Mewada
+ * @author Shruti Rathore
  * @version 1.0
  */
 @WebServlet(name = "WelcomeCtl", urlPatterns = { "/WelcomeCtl" })

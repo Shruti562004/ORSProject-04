@@ -20,7 +20,7 @@ import in.co.rays.proj4.util.JDBCDataSource;
  * application-specific exceptions defined in the project.
  * </p>
  *
- * @author Neeraj Mewada
+ * @author Shruti Rathore
  * @version 1.0
  */
 public class RoleModel {

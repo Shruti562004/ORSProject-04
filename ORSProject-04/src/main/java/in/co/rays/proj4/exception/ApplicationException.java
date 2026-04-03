@@ -12,7 +12,7 @@ package in.co.rays.proj4.exception;
  * This helps maintain a clean exception structure by separating 
  * user errors, database errors, and application errors.
  *
- * @author Neeraj Mewada
+ * @author Shruti Rathore
  */
 public class ApplicationException extends Exception {
 

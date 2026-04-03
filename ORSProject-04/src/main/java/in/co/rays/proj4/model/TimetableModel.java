@@ -26,7 +26,7 @@ import in.co.rays.proj4.exception.DuplicateRecordException;
 import in.co.rays.proj4.util.JDBCDataSource;
 
 /**
- * @author Neeraj Mewada
+ * @author Shruti Rathore
  *
  */
 public class TimetableModel {
