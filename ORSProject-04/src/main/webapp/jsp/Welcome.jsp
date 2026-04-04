@@ -11,7 +11,7 @@
 	<form action="<%=ORSView.WELCOME_CTL%>">
 		<%@ include file="Header.jsp"%>
 		<br> <br> <br>
-<h2>2026-04-06</h2>
+
 		<h1 align="center">
 			<font size="10px" color="navy">Welcome to ORS</font>
 		</h1>
