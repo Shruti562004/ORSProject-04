@@ -91,19 +91,6 @@ public class PaymentCtl extends BaseCtl {
 
 		return bean;
 	}
-@Override
-protected void preload(HttpServletRequest request, HttpServletResponse response)
-		throws IOException, ServletException {
-	PaymentModel Model = new PaymentModel();
-	try {
-		List paymentList = Model.list();
-		request.setAttribute("paymentList", paymentList);
-	} catch (ApplicationException e) {
-		
-		e.printStackTrace();
-		   ServletUtility.handleException(e, request, response, getView());
-	}
-}
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

@@ -25,20 +25,7 @@ public class PrescriptionCtl extends BaseCtl {
 
 	
 	
-	@Override
-	protected void preload(HttpServletRequest request, HttpServletResponse response)
-			throws IOException, ServletException {
-		PrescriptionModel artModel = new PrescriptionModel();
-		try {
-
-			List artList = artModel.list();
-			request.setAttribute("artList", artList);
-		} catch (ApplicationException e) {
-			e.printStackTrace();
-			   ServletUtility.handleException(e, request, response, getView());
-		}
-	}
-
+	
 	@Override
 	protected boolean validate(HttpServletRequest request) {
 
