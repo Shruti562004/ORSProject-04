@@ -21,7 +21,7 @@ import in.co.rays.proj4.util.ServletUtility;
 public class TrackingListCtl extends BaseCtl {
 
 	
-	protected void preload(HttpServletRequest request) {
+	protected void preload(HttpServletRequest request , HttpServletResponse response) throws IOException, ServletException {
 
 		TrackingModel boardModel = new TrackingModel();
 		
@@ -35,6 +35,7 @@ public class TrackingListCtl extends BaseCtl {
 
 		} catch (ApplicationException e) {
 			e.printStackTrace();
+			   ServletUtility.handleException(e, request, response, getView());
 		}
 	}
 	@Override
@@ -80,7 +81,7 @@ public class TrackingListCtl extends BaseCtl {
 
 		} catch (ApplicationException e) {
 			e.printStackTrace();
-			ServletUtility.handleException(e, request, response);
+			   ServletUtility.handleException(e, request, response, getView());
 			return;
 		}
 	}
@@ -162,7 +163,7 @@ public class TrackingListCtl extends BaseCtl {
 			ServletUtility.forward(getView(), request, response);
 		} catch (ApplicationException e) {
 			e.printStackTrace();
-			ServletUtility.handleException(e, request, response);
+			   ServletUtility.handleException(e, request, response, getView());
 			return;
 		}
 		

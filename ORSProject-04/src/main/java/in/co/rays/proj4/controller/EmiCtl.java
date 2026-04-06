@@ -22,7 +22,7 @@ import in.co.rays.proj4.util.ServletUtility;
 @WebServlet(name = "EmiCtl", urlPatterns = { "/ctl/EmiCtl" })
 public class EmiCtl extends BaseCtl {
 
-    protected void preload(HttpServletRequest request) {
+    protected void preload(HttpServletRequest request ,HttpServletResponse response) throws IOException, ServletException {
 
         EmiModel model = new EmiModel();
 
@@ -30,6 +30,7 @@ public class EmiCtl extends BaseCtl {
             List list = model.list(0, 0);
             request.setAttribute("list", list);
         } catch (ApplicationException e) {
+        	   ServletUtility.handleException(e, request, response, getView());
             e.printStackTrace();
         }
     }
@@ -93,7 +94,7 @@ public class EmiCtl extends BaseCtl {
                 ServletUtility.setBean(bean, request);
             } catch (ApplicationException e) {
                 e.printStackTrace();
-                ServletUtility.handleException(e, request, response);
+                ServletUtility.handleException(e, request, response, getView());
                 return;
             }
         }
@@ -130,7 +131,7 @@ public class EmiCtl extends BaseCtl {
 
             } catch (ApplicationException e) {
                 e.printStackTrace();
-                ServletUtility.handleException(e, request, response);
+                ServletUtility.handleException(e, request, response, getView());
                 return;
             }
 
@@ -148,7 +149,7 @@ public class EmiCtl extends BaseCtl {
 
             } catch (ApplicationException e) {
                 e.printStackTrace();
-                ServletUtility.handleException(e, request, response);
+                ServletUtility.handleException(e, request, response, getView());
                 return;
             } catch (DuplicateRecordException e) {
 				// TODO Auto-generated catch block

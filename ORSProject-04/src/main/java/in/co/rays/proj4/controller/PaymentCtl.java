@@ -92,14 +92,16 @@ public class PaymentCtl extends BaseCtl {
 		return bean;
 	}
 @Override
-protected void preload(HttpServletRequest request, HttpServletResponse responses)
+protected void preload(HttpServletRequest request, HttpServletResponse response)
 		throws IOException, ServletException {
 	PaymentModel Model = new PaymentModel();
 	try {
 		List paymentList = Model.list();
 		request.setAttribute("paymentList", paymentList);
 	} catch (ApplicationException e) {
+		
 		e.printStackTrace();
+		   ServletUtility.handleException(e, request, response, getView());
 	}
 }
 
@@ -117,7 +119,7 @@ protected void preload(HttpServletRequest request, HttpServletResponse responses
 				ServletUtility.setBean(bean, request);
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				ServletUtility.handleException(e, request, response);
+				   ServletUtility.handleException(e, request, response, getView());
 				return;
 			}
 		}
@@ -149,7 +151,7 @@ protected void preload(HttpServletRequest request, HttpServletResponse responses
 
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				ServletUtility.handleException(e, request, response);
+				   ServletUtility.handleException(e, request, response, getView());
 				return;
 			}
 
@@ -170,7 +172,7 @@ protected void preload(HttpServletRequest request, HttpServletResponse responses
 
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				ServletUtility.handleException(e, request, response);
+				   ServletUtility.handleException(e, request, response, getView());
 				return;
 			}
 

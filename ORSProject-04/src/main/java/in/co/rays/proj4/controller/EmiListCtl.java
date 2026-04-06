@@ -23,7 +23,7 @@ import in.co.rays.proj4.util.ServletUtility;
 public class EmiListCtl extends BaseCtl {
 
 @Override
-protected void preload(HttpServletRequest request, HttpServletResponse responses)
+protected void preload(HttpServletRequest request, HttpServletResponse response)
 		throws IOException, ServletException {
 	EmiModel model=new EmiModel();
 
@@ -32,6 +32,7 @@ protected void preload(HttpServletRequest request, HttpServletResponse responses
 		request.setAttribute("statusList", list);
 	} catch (ApplicationException e) {
 		e.printStackTrace();
+		   ServletUtility.handleException(e, request, response, getView());
 	}
 }
 	@Override
@@ -77,7 +78,7 @@ protected void preload(HttpServletRequest request, HttpServletResponse responses
 
 		} catch (ApplicationException e) {
 			e.printStackTrace();
-			ServletUtility.handleException(e, request, response);
+			   ServletUtility.handleException(e, request, response, getView());
 			return;
 		}
 	}
@@ -156,7 +157,7 @@ protected void preload(HttpServletRequest request, HttpServletResponse responses
 			ServletUtility.forward(getView(), request, response);
 		} catch (ApplicationException e) {
 			e.printStackTrace();
-			ServletUtility.handleException(e, request, response);
+			   ServletUtility.handleException(e, request, response, getView());
 			return;
 		}
 	}

@@ -26,7 +26,7 @@ public class PrescriptionCtl extends BaseCtl {
 	
 	
 	@Override
-	protected void preload(HttpServletRequest request, HttpServletResponse responses)
+	protected void preload(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
 		PrescriptionModel artModel = new PrescriptionModel();
 		try {
@@ -35,6 +35,7 @@ public class PrescriptionCtl extends BaseCtl {
 			request.setAttribute("artList", artList);
 		} catch (ApplicationException e) {
 			e.printStackTrace();
+			   ServletUtility.handleException(e, request, response, getView());
 		}
 	}
 
@@ -98,8 +99,7 @@ public class PrescriptionCtl extends BaseCtl {
 				ServletUtility.setBean(bean, request);
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				ServletUtility.handleException(e, request, response);
-				return;
+				   ServletUtility.handleException(e, request, response, getView());				return;
 			}
 		}
 		ServletUtility.forward(getView(), request, response);
@@ -128,7 +128,7 @@ public class PrescriptionCtl extends BaseCtl {
 				ServletUtility.setErrorMessage("Role already exists", request);
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				ServletUtility.handleException(e, request, response);
+				   ServletUtility.handleException(e, request, response, getView());
 				return;
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -148,7 +148,7 @@ public class PrescriptionCtl extends BaseCtl {
 				ServletUtility.setErrorMessage("already exists", request);
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				ServletUtility.handleException(e, request, response);
+				   ServletUtility.handleException(e, request, response, getView());
 				return;
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

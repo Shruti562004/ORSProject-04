@@ -93,7 +93,7 @@ public class LabCtl extends BaseCtl {
 				ServletUtility.setBean(bean, request);
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				ServletUtility.handleException(e, request, response);
+				   ServletUtility.handleException(e, request, response, getView());
 				return;
 			}
 		}
@@ -121,7 +121,7 @@ public class LabCtl extends BaseCtl {
 
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				ServletUtility.handleException(e, request, response);
+				   ServletUtility.handleException(e, request, response, getView());
 				return;
 			} catch (DuplicateRecordException e) {
 				// TODO Auto-generated catch block
@@ -141,7 +141,7 @@ public class LabCtl extends BaseCtl {
 
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				ServletUtility.handleException(e, request, response);
+				   ServletUtility.handleException(e, request, response, getView());
 				return;
 			} catch (DuplicateRecordException e) {
 				// TODO Auto-generated catch block

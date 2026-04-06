@@ -76,7 +76,7 @@ public class BudgetCtl extends BaseCtl {
 				ServletUtility.setBean(bean, request);
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				ServletUtility.handleException(e, request, response);
+				   ServletUtility.handleException(e, request, response, getView());
 				return;
 			}
 		}
@@ -107,7 +107,7 @@ public class BudgetCtl extends BaseCtl {
 				ServletUtility.setErrorMessage(" already exists", request);
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				ServletUtility.handleException(e, request, response);
+				   ServletUtility.handleException(e, request, response, getView());
 				return;
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -127,7 +127,7 @@ public class BudgetCtl extends BaseCtl {
 				ServletUtility.setErrorMessage(" already exists", request);
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				ServletUtility.handleException(e, request, response);
+				   ServletUtility.handleException(e, request, response, getView());
 				return;
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

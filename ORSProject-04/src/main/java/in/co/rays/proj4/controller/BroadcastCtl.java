@@ -86,7 +86,7 @@ public class BroadcastCtl extends BaseCtl {
 				ServletUtility.setBean(bean, request);
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				ServletUtility.handleException(e, request, response);
+				   ServletUtility.handleException(e, request, response, getView());
 				return;
 			}
 		}
@@ -117,7 +117,7 @@ public class BroadcastCtl extends BaseCtl {
 				ServletUtility.setErrorMessage("Role already exists", request);
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				ServletUtility.handleException(e, request, response);
+				   ServletUtility.handleException(e, request, response, getView());
 				return;
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -137,7 +137,7 @@ public class BroadcastCtl extends BaseCtl {
 				ServletUtility.setErrorMessage("Role already exists", request);
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				ServletUtility.handleException(e, request, response);
+				   ServletUtility.handleException(e, request, response, getView());
 				return;
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

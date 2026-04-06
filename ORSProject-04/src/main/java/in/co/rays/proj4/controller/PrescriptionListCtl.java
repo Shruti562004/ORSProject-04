@@ -31,7 +31,7 @@ import in.co.rays.proj4.util.ServletUtility;
 public class PrescriptionListCtl extends BaseCtl {
 
 	@Override
-		protected void preload(HttpServletRequest request, HttpServletResponse responses)
+		protected void preload(HttpServletRequest request, HttpServletResponse response)
 				throws IOException, ServletException {
 		PrescriptionModel model = new PrescriptionModel();
 
@@ -42,7 +42,8 @@ public class PrescriptionListCtl extends BaseCtl {
 
 	    } catch (ApplicationException e) {
 	        e.printStackTrace();
-	    };
+			   ServletUtility.handleException(e, request, response, getView());
+	    }
 		}
 
 	@Override
@@ -93,7 +94,7 @@ public class PrescriptionListCtl extends BaseCtl {
         } catch (ApplicationException e) {
 
             e.printStackTrace();
-            ServletUtility.handleException(e, request, response);
+ 		   ServletUtility.handleException(e, request, response, getView());
         }
 
     }
@@ -137,7 +138,7 @@ public class PrescriptionListCtl extends BaseCtl {
 
             } else if (OP_NEW.equalsIgnoreCase(op)) {
 
-                ServletUtility.redirect(ORSView.PRESCRIPTION_CTL, request, response);
+            	ServletUtility.redirect(ORSView.PRESCRIPTION_CTL, request, response);
                 return;
 
             } else if (OP_DELETE.equalsIgnoreCase(op)) {
@@ -192,7 +193,7 @@ public class PrescriptionListCtl extends BaseCtl {
         } catch (ApplicationException e) {
 
             e.printStackTrace();
-            ServletUtility.handleException(e, request, response);
+ 		   ServletUtility.handleException(e, request, response, getView());
         }
 
     }

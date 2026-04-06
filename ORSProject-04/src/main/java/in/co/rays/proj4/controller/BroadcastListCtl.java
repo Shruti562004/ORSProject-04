@@ -23,7 +23,7 @@ import in.co.rays.proj4.util.ServletUtility;
 public class BroadcastListCtl extends BaseCtl {
 
 	
-	protected void preload(HttpServletRequest request) {
+	protected void preload(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
 
 		BroadcastModel boardModel = new BroadcastModel();
 		
@@ -37,6 +37,7 @@ public class BroadcastListCtl extends BaseCtl {
 
 		} catch (ApplicationException e) {
 			e.printStackTrace();
+			   ServletUtility.handleException(e, request, response, getView());
 		}
 	}
 	protected BaseBean populateBean(HttpServletRequest request) {
@@ -82,7 +83,7 @@ public class BroadcastListCtl extends BaseCtl {
 
 		} catch (ApplicationException e) {
 			e.printStackTrace();
-			ServletUtility.handleException(e, request, response);
+			   ServletUtility.handleException(e, request, response, getView());
 			return;
 		}
 	}
@@ -164,7 +165,7 @@ public class BroadcastListCtl extends BaseCtl {
 			ServletUtility.forward(getView(), request, response);
 		} catch (ApplicationException e) {
 			e.printStackTrace();
-			ServletUtility.handleException(e, request, response);
+			   ServletUtility.handleException(e, request, response, getView());
 			return;
 		}
 		

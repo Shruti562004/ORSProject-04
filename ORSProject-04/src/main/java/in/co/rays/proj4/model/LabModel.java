@@ -243,7 +243,7 @@ public class LabModel {
 		return list;
 	}
 
-	public List search(LabBean bean,int pageNo,int pageSize) throws SQLException {
+	public List search(LabBean bean,int pageNo,int pageSize) throws ApplicationException {
 		Connection conn=null;
 		
 		ArrayList list=new ArrayList();
@@ -296,4 +296,4 @@ public class LabModel {
 	}
 	return list;
 }
-}
+	}

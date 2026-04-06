@@ -25,7 +25,7 @@ import in.co.rays.proj4.util.ServletUtility;
 @WebServlet(name = "GymworkoutListCtl", urlPatterns = { "/ctl/GymworkoutListCtl" })
 
 public class GymworkoutListCtl extends BaseCtl {
-	protected void preload(HttpServletRequest request) {
+	protected void preload(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
 
 	    GymworkoutModel model = new GymworkoutModel();
 
@@ -36,6 +36,7 @@ public class GymworkoutListCtl extends BaseCtl {
 
 	    } catch (ApplicationException e) {
 	        e.printStackTrace();
+	    	ServletUtility.handleException(e, request, response, getView());
 	    }
 	}
 
@@ -85,7 +86,7 @@ public class GymworkoutListCtl extends BaseCtl {
         } catch (ApplicationException e) {
 
             e.printStackTrace();
-            ServletUtility.handleException(e, request, response);
+            ServletUtility.handleException(e, request, response, getView());
         }
 
     }
@@ -179,7 +180,7 @@ public class GymworkoutListCtl extends BaseCtl {
         } catch (ApplicationException e) {
 
             e.printStackTrace();
-            ServletUtility.handleException(e, request, response);
+            ServletUtility.handleException(e, request, response, getView());
         }
 
     }

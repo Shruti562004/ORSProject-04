@@ -9,10 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import in.co.rays.proj4.bean.LabBean;
 import in.co.rays.proj4.bean.BaseBean;
-
+import in.co.rays.proj4.bean.LabBean;
 import in.co.rays.proj4.controller.BaseCtl;
 import in.co.rays.proj4.controller.ORSView;
 import in.co.rays.proj4.exception.ApplicationException;
+import in.co.rays.proj4.model.LabModel;
 import in.co.rays.proj4.model.LabModel;
 
 import in.co.rays.proj4.util.DataUtility;
@@ -47,32 +48,27 @@ public class LabListCtl extends BaseCtl {
 		LabBean bean = (LabBean) populateBean(request);
 		LabModel model = new LabModel();
 
-		List<LabBean> list = null;
 		try {
-			list = model.search(bean, pageNo, pageSize);
-		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		List<LabBean> next = null;
-		try {
-			next = model.search(bean, pageNo + 1, pageSize);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			List<LabBean>list = model.search(bean, pageNo, pageSize);
+			List<LabBean> next = model.search(bean, pageNo + 1, pageSize);
+
+			if (list == null || list.isEmpty()) {
+				ServletUtility.setErrorMessage("No record found", request);
+			}
+
+			ServletUtility.setList(list, request);
+			ServletUtility.setPageNo(pageNo, request);
+			ServletUtility.setPageSize(pageSize, request);
+			ServletUtility.setBean(bean, request);
+			request.setAttribute("nextListSize", next.size());
+
+			ServletUtility.forward(getView(), request, response);
+			
+		}catch(ApplicationException e) {
 			e.printStackTrace();
+			   ServletUtility.handleException(e, request, response, getView());
+			return;
 		}
-
-		if (list == null || list.isEmpty()) {
-			ServletUtility.setErrorMessage("No record found", request);
-		}
-
-		ServletUtility.setList(list, request);
-		ServletUtility.setPageNo(pageNo, request);
-		ServletUtility.setPageSize(pageSize, request);
-		ServletUtility.setBean(bean, request);
-		request.setAttribute("nextListSize", next.size());
-
-		ServletUtility.forward(getView(), request, response);
 	}
 
 	@Override
@@ -133,18 +129,8 @@ public class LabListCtl extends BaseCtl {
 				return;
 			}
 
-			try {
 				list = model.search(bean, pageNo, pageSize);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			try {
 				next = model.search(bean, pageNo + 1, pageSize);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 
 			if (list == null || list.size() == 0) {
 				ServletUtility.setErrorMessage("No record found ", request);
@@ -159,10 +145,10 @@ public class LabListCtl extends BaseCtl {
 			ServletUtility.forward(getView(), request, response);
 		} catch (ApplicationException e) {
 			e.printStackTrace();
-			ServletUtility.handleException(e, request, response);
-			return;
+			   ServletUtility.handleException(e, request, response, getView());
+			return ;}
 		}
-	}
+	
     @Override
     protected String getView() {
         return ORSView.LAB_LIST_VIEW;
