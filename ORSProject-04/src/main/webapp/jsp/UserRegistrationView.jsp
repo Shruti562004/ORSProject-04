@@ -85,7 +85,7 @@
 					<td style="position: fixed;"><font color="red"> <%=ServletUtility.getErrorMessage("confirmPassword", request)%></font></td>
 				</tr>
 				<tr>
-					<th>DOB:</th>
+				<th align="left">DOB<span style="color: red">*</span></th>
 					<td><input type="text" name="dob" input type="text" id="udate"
 						name="dob" placeholder="Select Date of Birth"
 						value="<%=DataUtility.getDateString(bean.getDob())%>"

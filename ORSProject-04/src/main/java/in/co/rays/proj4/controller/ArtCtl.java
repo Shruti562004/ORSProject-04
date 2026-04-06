@@ -35,7 +35,11 @@ protected void preload(HttpServletRequest request, HttpServletResponse responses
 		request.setAttribute("artList", artList);
 		System.out.println("in list...."+ artList);
 	} catch (ApplicationException e) {
+		
 		e.printStackTrace();
+		ServletUtility.handleException(e, request, responses, getView());
+		
+		 return;
 	}
 }
 	@Override
@@ -98,7 +102,7 @@ protected void preload(HttpServletRequest request, HttpServletResponse responses
 				ServletUtility.setBean(bean, request);
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				ServletUtility.handleException(e, request, response);
+				 ServletUtility.handleException(e, request, response, getView());
 				return;
 			}
 		}
@@ -128,7 +132,7 @@ protected void preload(HttpServletRequest request, HttpServletResponse responses
 				ServletUtility.setErrorMessage("Role already exists", request);
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				ServletUtility.handleException(e, request, response);
+				 ServletUtility.handleException(e, request, response, getView());
 				return;
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -148,7 +152,7 @@ protected void preload(HttpServletRequest request, HttpServletResponse responses
 				ServletUtility.setErrorMessage("Role already exists", request);
 			} catch (ApplicationException e) {
 				e.printStackTrace();
-				ServletUtility.handleException(e, request, response);
+				 ServletUtility.handleException(e, request, response, getView());
 				return;
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

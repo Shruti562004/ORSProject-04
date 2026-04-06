@@ -77,11 +77,11 @@ public class LoginCtl extends BaseCtl {
 
         if (DataValidator.isNull(request.getParameter("login"))) {
             log.warn("Login id is null");
-            request.setAttribute("login", PropertyReader.getValue("error.require", "Login Id"));
+            request.setAttribute("login", PropertyReader.getValue("error.require", "LoginId"));
             pass = false;
         } else if (!DataValidator.isEmail(request.getParameter("login"))) {
             log.warn("Invalid email format for login");
-            request.setAttribute("login", PropertyReader.getValue("error.email", "Login "));
+            request.setAttribute("login", PropertyReader.getValue("error.email", "Login"));
             pass = false;
         }
 
@@ -108,6 +108,7 @@ public class LoginCtl extends BaseCtl {
 
         UserBean bean = new UserBean();
         bean.setId(DataUtility.getLong(request.getParameter("id")));
+        System.out.println("jhscouKJAOASLCAS8GF" +request.getParameter("id"));
         bean.setLogin(DataUtility.getString(request.getParameter("login")));
         bean.setPassword(DataUtility.getString(request.getParameter("password")));
 
@@ -174,6 +175,7 @@ public class LoginCtl extends BaseCtl {
 
             try {
                 bean = model.authenticate(bean.getLogin(), bean.getPassword());
+               
 
                 if (bean != null) {
 
@@ -191,10 +193,10 @@ public class LoginCtl extends BaseCtl {
                     return;
 
                 } else {
-                    log.warn("Authentication failed for login: " + bean.getLogin());
                     bean = (UserBean) populateBean(request);
                     ServletUtility.setBean(bean, request);
                     ServletUtility.setErrorMessage("Invalid LoginId And Password", request);
+                    log.warn("Authentication failed for login: " + bean.getLogin());
                 }
 
             } catch (ApplicationException e) {

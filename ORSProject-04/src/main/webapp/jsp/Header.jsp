@@ -208,7 +208,7 @@
 		}
 	%>
 
-	<!-- Admin Only -->
+
 	<a href="<%=ORSView.JAVA_DOC%>" target="blank"><b>Java Doc</b></a> |
 
 	<!-- Logout -->

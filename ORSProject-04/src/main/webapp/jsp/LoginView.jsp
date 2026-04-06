@@ -14,6 +14,7 @@
 	<form action="<%=ORSView.LOGIN_CTL%>" method="post">
 		<%@ include file="Header.jsp"%>
 
+	
 		<jsp:useBean id="bean" class="in.co.rays.proj4.bean.UserBean"
 			scope="request"></jsp:useBean>
 
@@ -25,6 +26,8 @@
 			<div style="height: 15px; margin-bottom: 12px">
 				<H3 align="center">
 					<font color="red"> <%=ServletUtility.getErrorMessage(request)%>
+					
+					
 					</font>
 				</H3>
 				<H3 align="center">

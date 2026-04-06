@@ -191,11 +191,4 @@ public interface ORSView {
 
 	public String  BUDGET_LIST_VIEW = PAGE_FOLDER + "/BudgetListView.jsp";
 	public String  BUDGET_LIST_CTL = APP_CONTEXT + "/ctl/BudgetListCtl";
-
-	// Patient Module
-public String PATIENT_VIEW = PAGE_FOLDER + "/PatientView.jsp";
-public String PATIENT_CTL = APP_CONTEXT + "/ctl/PatientCtl";
-
-public String PATIENT_LIST_VIEW = PAGE_FOLDER + "/PatientListView.jsp";
-public String PATIENT_LIST_CTL = APP_CONTEXT + "/ctl/PatientListCtl";
 }

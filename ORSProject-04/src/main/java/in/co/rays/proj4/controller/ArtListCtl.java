@@ -21,7 +21,7 @@ import in.co.rays.proj4.util.ServletUtility;
 public class ArtListCtl extends BaseCtl {
 
 	@Override
-	protected void preload(HttpServletRequest request, HttpServletResponse responses)
+	protected void preload(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
 		ArtModel artModel = new ArtModel();
 		try {
@@ -31,6 +31,7 @@ public class ArtListCtl extends BaseCtl {
 			request.setAttribute("artList", artList);
 		} catch (ApplicationException e) {
 			e.printStackTrace();
+			 ServletUtility.handleException(e, request, response, getView());
 		}
 	}
 
@@ -80,7 +81,7 @@ public class ArtListCtl extends BaseCtl {
 
 		} catch (ApplicationException e) {
 			e.printStackTrace();
-			ServletUtility.handleException(e, request, response);
+			 ServletUtility.handleException(e, request, response, getView());
 			return;
 		}
 	}
