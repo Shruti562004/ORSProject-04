@@ -249,6 +249,13 @@ public class BudgetModel {
 			if (bean.getAmount() > 0) {
 				sql.append(" AND amount= " + bean.getAmount());
 			}
+			if (bean.getSpentAmount()> 0) {
+				sql.append(" AND spent_amount= " + bean.getSpentAmount());
+			}
+			if (bean.getDepartment() != null && bean.getDepartment().length() > 0) {
+				System.out.println(bean.getDepartment());
+				sql.append(" AND department like '" + bean.getDepartment() + "%'");
+			}
 
 		}
 

@@ -54,7 +54,10 @@
                     <td align="center">
                      <label><b> Amount :</b></label>
 						<input type="text" name="amount" placeholder="Enter  amount" value="<%=ServletUtility.getParameter("amount", request)%>">&emsp;
-                        
+                        <label><b> Spent Amount :</b></label>
+						<input type="text" name="spentAmount" placeholder="Enter  amount" value="<%=ServletUtility.getParameter("spentAmount", request)%>">&emsp;
+						<label><b> Department :</b></label>
+						<input type="text" name="department" placeholder="Enter  department" value="<%=ServletUtility.getParameter("department", request)%>">&emsp;
                         <input type="submit" name="operation" value="<%=BudgetListCtl.OP_SEARCH%>">&nbsp;
                         <input type="submit" name="operation" value="<%=BudgetListCtl.OP_RESET%>">
                     </td>
