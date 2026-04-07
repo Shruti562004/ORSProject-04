@@ -22,19 +22,7 @@ import in.co.rays.proj4.util.ServletUtility;
 @WebServlet(name = "EmiCtl", urlPatterns = { "/ctl/EmiCtl" })
 public class EmiCtl extends BaseCtl {
 
-    protected void preload(HttpServletRequest request ,HttpServletResponse response) throws IOException, ServletException {
-
-        EmiModel model = new EmiModel();
-
-        try {
-            List list = model.list(0, 0);
-            request.setAttribute("list", list);
-        } catch (ApplicationException e) {
-        	   ServletUtility.handleException(e, request, response, getView());
-            e.printStackTrace();
-        }
-    }
-
+   
     // ================= Populate Bean =================
     @Override
     protected BaseBean populateBean(HttpServletRequest request) {
